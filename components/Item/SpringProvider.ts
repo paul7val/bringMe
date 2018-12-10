@@ -7,17 +7,17 @@ import {
 export default class SpringProvider {
   @observable value = new Animated.Value(0);
   max: number;
-  min: number = 0;
-  fr: number = 10;
-  tr: number = 40;
+  min: number;
+  fr: number;
+  tr: number;
   open: boolean = true;
   animating: boolean = false;
 
-  constructor(max: number, fr: number, tr?: number, min?: number) {
+  constructor(max: number = 10, fr: number = 10, tr: number = 40, min: number = 0) {
     this.max = max;
-    this.min = min ? min : this.min;
+    this.min = min;
     this.fr = fr;
-    this.tr = tr ? tr : this.tr;
+    this.tr = tr;
   }
 
   toggle = () => {

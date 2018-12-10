@@ -8,7 +8,7 @@ import Content from './components/Content'
 const uiTheme = {
   palette: {
     primaryColor: COLOR.lightBlueA200,
-    secondaryColor: COLOR.lightBlue100
+    secondaryColor: COLOR.lightBlueA100
   },
   toolbar: {
     container: {
@@ -16,11 +16,6 @@ const uiTheme = {
     },
   },
 };
-
-interface State {
-  value: string;
-  item: string;
-}
 
 @observer
 export default class App extends React.Component<{}, {}> {

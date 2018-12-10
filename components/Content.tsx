@@ -41,7 +41,7 @@ export default class Content extends React.Component<{}, {}> {
             Welcome to BringMe!
           </Text>
         </View>
-        <ScrollView style={s.scroll}>
+        <ScrollView>
           {list &&
             list.map( item => {
               return (
@@ -79,9 +79,6 @@ const s = StyleSheet.create({
     marginTop: 30,
     marginBottom: 10,
     textAlign: 'center'
-  },
-  scroll: {
-    flex: 2
   },
   item: {
     textAlign: 'center',

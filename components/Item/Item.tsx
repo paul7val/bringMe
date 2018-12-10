@@ -24,17 +24,18 @@ export default class Item extends React.Component<Props, {}> {
     this.marginProvider.toggle()
   }
 
-  close = () => {
+  close = async () => {
     const {item, remove} = this.props;
-    this.marginProvider.toggle();
-    this.heightProvider.toggle().then(() => remove(item));
+     this.marginProvider.toggle()
+    await this.heightProvider.toggle();
+    await remove(item);
   }
 
   render() {
     const {item} = this.props;
     return (
       <Animated.View 
-        style={{backgroundColor: '#EBEBEB', marginHorizontal: 5, marginVertical: this.margin, alignSelf: 'stretch', height: this.height, overflow: 'hidden'}} 
+        style={{backgroundColor: '#EBEBEB', marginHorizontal: 10, marginVertical: this.margin, alignSelf: 'stretch', height: this.height, overflow: 'hidden'}} 
       >
         <Button
           onPress={this.close}
